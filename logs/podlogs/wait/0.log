@@ -1,0 +1,11 @@
+2026-09-19T11:28:47.453682749Z stderr F time=2026-09-19T11:28:47.453Z level=INFO msg="Starting Workflow Executor" buildDate=2026-09-18T09:31:26Z gitCommit=b5b4d665e9be9b87c115f943584c3e0ae96fe073 argo=true gitTag=v4.1.4 gitTreeState=clean goVersion=go1.26.5 version=v4.1.4
+2026-09-19T11:28:47.454718778Z stderr F time=2026-09-19T11:28:47.454Z level=INFO msg="Using executor retry strategy" argo=true Jitter=0.5 Steps=5 Duration=1s Factor=1.6
+2026-09-19T11:28:47.454831635Z stderr F time=2026-09-19T11:28:47.454Z level=INFO msg="Executor initialized" argo=true templateName=demo version=v4.1.4 gitCommit=b5b4d665e9be9b87c115f943584c3e0ae96fe073 goVersion=go1.26.5 includeScriptOutput=false gitTag=v4.1.4 deadline=0001-01-01T00:00:00.000Z buildDate=2026-09-18T09:31:26Z podName=experiment-k42z6 gitTreeState=clean namespace=argo
+2026-09-19T11:28:47.568695899Z stderr F time=2026-09-19T11:28:47.568Z level=INFO msg="Starting deadline monitor" argo=true containers=[main]
+2026-09-19T11:33:47.455262179Z stderr F time="2026-09-19T11:33:47.455Z" level=info msg="Alloc=7324 TotalAlloc=16469 Sys=22902 NumGC=6 Goroutines=10"
+2026-09-19T11:33:47.888075755Z stderr F time=2026-09-19T11:33:47.887Z level=INFO msg="Main container completed" argo=true error=<nil>
+2026-09-19T11:33:47.888081145Z stderr F time=2026-09-19T11:33:47.887Z level=INFO msg="No Script output reference in workflow. Capturing script output ignored" argo=true
+2026-09-19T11:33:47.88808278Z stderr F time=2026-09-19T11:33:47.887Z level=INFO msg="No output parameters" argo=true
+2026-09-19T11:33:47.888083626Z stderr F time=2026-09-19T11:33:47.887Z level=INFO msg="No output artifacts" argo=true
+2026-09-19T11:33:47.90223396Z stderr F time="2026-09-19T11:33:47.902Z" level=info msg="Alloc=7480 TotalAlloc=16626 Sys=22902 NumGC=6 Goroutines=9"
+2026-09-19T11:33:47.902242702Z stderr F time=2026-09-19T11:33:47.902Z level=INFO msg="no artifact sidecars to kill" argo=true

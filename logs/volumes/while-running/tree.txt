@@ -1,0 +1,9 @@
+2026-09-19 11:28:46  d         4096  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/tmp-dir-argo
+2026-09-19 11:28:46  d         4096  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/tmp-dir-argo/0
+2026-09-19 11:28:43  d         4096  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/argo-staging
+2026-09-19 11:28:43  f          100  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/argo-staging/script
+2026-09-19 11:28:47  d         4096  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo
+2026-09-19 11:28:43  f    166569319  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo/argoexec
+2026-09-19 11:28:47  d         4096  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo/ctr
+2026-09-19 11:28:47  d         4096  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo/ctr/main
+2026-09-19 11:28:43  f          259  /var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo/template

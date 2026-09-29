@@ -1,0 +1,1 @@
+(no emptyDir volumes present - pod had terminated and kubelet reclaimed them)

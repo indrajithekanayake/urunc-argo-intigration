@@ -1,0 +1,6 @@
+/sys/fs/cgroup/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podc6903810_78f0_485c_8bf7_f39d6b3e552c.slice/cri-containerd-77b238117588962d7d1636b914844f20da2d2085823702d853c1d762e482d610.scope
+    98801 
+/sys/fs/cgroup/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podc6903810_78f0_485c_8bf7_f39d6b3e552c.slice/cri-containerd-c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b.scope
+    98690 
+/sys/fs/cgroup/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podc6903810_78f0_485c_8bf7_f39d6b3e552c.slice/cri-containerd-2c202c882609cf63fe29ca9171b0fd7fb147e88780357c11893257380f1d114c.scope
+    98836 98858 

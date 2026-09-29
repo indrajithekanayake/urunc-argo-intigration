@@ -1,0 +1,719 @@
+{
+  "info": {
+    "config": {
+      "annotations": {
+        "io.kubernetes.container.hash": "73f80b47",
+        "io.kubernetes.container.restartCount": "0",
+        "io.kubernetes.container.terminationMessagePath": "/dev/termination-log",
+        "io.kubernetes.container.terminationMessagePolicy": "File",
+        "io.kubernetes.pod.terminationGracePeriod": "30"
+      },
+      "args": [
+        "/argo/staging/script"
+      ],
+      "command": [
+        "/var/run/argo/argoexec",
+        "emissary",
+        "--loglevel",
+        "info",
+        "--log-format",
+        "text",
+        "--gloglevel",
+        "0",
+        "--",
+        "python"
+      ],
+      "envs": [
+        {
+          "key": "TRACEPARENT",
+          "value": "00-d6415fcf67ccce1f4e23a3983d12309e-7fc2acca37e49c1f-01"
+        },
+        {
+          "key": "ARGO_PROGRESS_FILE",
+          "value": "/var/run/argo/progress"
+        },
+        {
+          "key": "ARGO_CONTAINER_NAME",
+          "value": "main"
+        },
+        {
+          "key": "ARGO_NODE_ID",
+          "value": "experiment-k42z6"
+        },
+        {
+          "key": "ARGO_INCLUDE_SCRIPT_OUTPUT",
+          "value": "false"
+        },
+        {
+          "key": "ARGO_DEADLINE",
+          "value": "0001-01-01T00:00:00Z"
+        },
+        {
+          "key": "ARGO_PROGRESS_PATCH_TICK_DURATION",
+          "value": "1m0s"
+        },
+        {
+          "key": "ARGO_PROGRESS_FILE_TICK_DURATION",
+          "value": "3s"
+        },
+        {
+          "key": "ARGO_WORKFLOW_NAME",
+          "value": "experiment-k42z6"
+        },
+        {
+          "key": "TRACESTATE",
+          "value": "workflow=argo/experiment-k42z6"
+        },
+        {
+          "key": "ARGO_SERVER_PORT_2746_TCP_PORT",
+          "value": "2746"
+        },
+        {
+          "key": "ARGO_SERVER_PORT_2746_TCP_ADDR",
+          "value": "10.104.34.120"
+        },
+        {
+          "key": "KUBERNETES_PORT",
+          "value": "tcp://10.96.0.1:443"
+        },
+        {
+          "key": "KUBERNETES_SERVICE_HOST",
+          "value": "10.96.0.1"
+        },
+        {
+          "key": "KUBERNETES_PORT_443_TCP_ADDR",
+          "value": "10.96.0.1"
+        },
+        {
+          "key": "KUBERNETES_PORT_443_TCP_PROTO",
+          "value": "tcp"
+        },
+        {
+          "key": "ARGO_SERVER_SERVICE_HOST",
+          "value": "10.104.34.120"
+        },
+        {
+          "key": "ARGO_SERVER_SERVICE_PORT",
+          "value": "2746"
+        },
+        {
+          "key": "ARGO_SERVER_SERVICE_PORT_WEB",
+          "value": "2746"
+        },
+        {
+          "key": "ARGO_SERVER_PORT_2746_TCP",
+          "value": "tcp://10.104.34.120:2746"
+        },
+        {
+          "key": "KUBERNETES_SERVICE_PORT",
+          "value": "443"
+        },
+        {
+          "key": "KUBERNETES_SERVICE_PORT_HTTPS",
+          "value": "443"
+        },
+        {
+          "key": "KUBERNETES_PORT_443_TCP",
+          "value": "tcp://10.96.0.1:443"
+        },
+        {
+          "key": "KUBERNETES_PORT_443_TCP_PORT",
+          "value": "443"
+        },
+        {
+          "key": "ARGO_SERVER_PORT",
+          "value": "tcp://10.104.34.120:2746"
+        },
+        {
+          "key": "ARGO_SERVER_PORT_2746_TCP_PROTO",
+          "value": "tcp"
+        }
+      ],
+      "image": {
+        "image": "sha256:80cc52c6f1cf4d2b8711e273a814d5e5a2b59ccf909936fe09e5f6603a409170",
+        "user_specified_image": "python:alpine3.23"
+      },
+      "labels": {
+        "io.kubernetes.container.name": "main",
+        "io.kubernetes.pod.name": "experiment-k42z6",
+        "io.kubernetes.pod.namespace": "argo",
+        "io.kubernetes.pod.uid": "c6903810-78f0-485c-8bf7-f39d6b3e552c"
+      },
+      "linux": {
+        "resources": {
+          "cpu_period": 100000,
+          "cpu_shares": 2,
+          "hugepage_limits": [
+            {
+              "page_size": "2MB"
+            },
+            {
+              "page_size": "1GB"
+            }
+          ],
+          "oom_score_adj": 1000,
+          "unified": {
+            "memory.low": "0",
+            "memory.min": "0",
+            "memory.oom.group": "1",
+            "memory.swap.max": "0"
+          }
+        },
+        "security_context": {
+          "masked_paths": [
+            "/proc/asound",
+            "/proc/acpi",
+            "/proc/interrupts",
+            "/proc/kcore",
+            "/proc/keys",
+            "/proc/latency_stats",
+            "/proc/timer_list",
+            "/proc/timer_stats",
+            "/proc/sched_debug",
+            "/proc/scsi",
+            "/sys/firmware",
+            "/sys/devices/virtual/powercap"
+          ],
+          "namespace_options": {
+            "pid": 1,
+            "userns_options": {
+              "mode": 2
+            }
+          },
+          "readonly_paths": [
+            "/proc/bus",
+            "/proc/fs",
+            "/proc/irq",
+            "/proc/sys",
+            "/proc/sysrq-trigger"
+          ],
+          "run_as_user": {},
+          "seccomp": {
+            "profile_type": 1
+          }
+        }
+      },
+      "log_path": "main/0.log",
+      "metadata": {
+        "name": "main"
+      },
+      "mounts": [
+        {
+          "container_path": "/argo/staging",
+          "host_path": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/argo-staging"
+        },
+        {
+          "container_path": "/var/run/argo",
+          "host_path": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo"
+        },
+        {
+          "container_path": "/var/run/secrets/kubernetes.io/serviceaccount",
+          "host_path": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~projected/kube-api-access-gtlnp",
+          "readonly": true
+        },
+        {
+          "container_path": "/etc/hosts",
+          "host_path": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/etc-hosts"
+        },
+        {
+          "container_path": "/dev/termination-log",
+          "host_path": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/containers/main/c53734b2"
+        }
+      ]
+    },
+    "pid": 0,
+    "removing": false,
+    "runtimeOptions": {
+      "systemd_cgroup": true
+    },
+    "runtimeSpec": {
+      "annotations": {
+        "io.kubernetes.cri.container-name": "main",
+        "io.kubernetes.cri.container-type": "container",
+        "io.kubernetes.cri.image-name": "python:alpine3.23",
+        "io.kubernetes.cri.sandbox-id": "c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b",
+        "io.kubernetes.cri.sandbox-name": "experiment-k42z6",
+        "io.kubernetes.cri.sandbox-namespace": "argo",
+        "io.kubernetes.cri.sandbox-uid": "c6903810-78f0-485c-8bf7-f39d6b3e552c"
+      },
+      "linux": {
+        "cgroupsPath": "kubepods-besteffort-podc6903810_78f0_485c_8bf7_f39d6b3e552c.slice:cri-containerd:2c202c882609cf63fe29ca9171b0fd7fb147e88780357c11893257380f1d114c",
+        "maskedPaths": [
+          "/proc/asound",
+          "/proc/acpi",
+          "/proc/interrupts",
+          "/proc/kcore",
+          "/proc/keys",
+          "/proc/latency_stats",
+          "/proc/timer_list",
+          "/proc/timer_stats",
+          "/proc/sched_debug",
+          "/proc/scsi",
+          "/sys/firmware",
+          "/sys/devices/virtual/powercap"
+        ],
+        "namespaces": [
+          {
+            "type": "pid"
+          },
+          {
+            "path": "/proc/98690/ns/ipc",
+            "type": "ipc"
+          },
+          {
+            "path": "/proc/98690/ns/uts",
+            "type": "uts"
+          },
+          {
+            "type": "mount"
+          },
+          {
+            "path": "/proc/98690/ns/net",
+            "type": "network"
+          },
+          {
+            "type": "cgroup"
+          }
+        ],
+        "readonlyPaths": [
+          "/proc/bus",
+          "/proc/fs",
+          "/proc/irq",
+          "/proc/sys",
+          "/proc/sysrq-trigger"
+        ],
+        "resources": {
+          "cpu": {
+            "period": 100000,
+            "shares": 2
+          },
+          "devices": [
+            {
+              "access": "rwm",
+              "allow": false
+            }
+          ],
+          "memory": {},
+          "unified": {
+            "memory.low": "0",
+            "memory.min": "0",
+            "memory.oom.group": "1",
+            "memory.swap.max": "0"
+          }
+        }
+      },
+      "mounts": [
+        {
+          "destination": "/proc",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev"
+          ],
+          "source": "proc",
+          "type": "proc"
+        },
+        {
+          "destination": "/dev",
+          "options": [
+            "nosuid",
+            "strictatime",
+            "mode=755",
+            "size=65536k"
+          ],
+          "source": "tmpfs",
+          "type": "tmpfs"
+        },
+        {
+          "destination": "/dev/pts",
+          "options": [
+            "nosuid",
+            "noexec",
+            "newinstance",
+            "ptmxmode=0666",
+            "mode=0620",
+            "gid=5"
+          ],
+          "source": "devpts",
+          "type": "devpts"
+        },
+        {
+          "destination": "/dev/mqueue",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev"
+          ],
+          "source": "mqueue",
+          "type": "mqueue"
+        },
+        {
+          "destination": "/sys",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev",
+            "ro"
+          ],
+          "source": "sysfs",
+          "type": "sysfs"
+        },
+        {
+          "destination": "/sys/fs/cgroup",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev",
+            "relatime",
+            "ro"
+          ],
+          "source": "cgroup",
+          "type": "cgroup"
+        },
+        {
+          "destination": "/argo/staging",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/argo-staging",
+          "type": "bind"
+        },
+        {
+          "destination": "/etc/hosts",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/etc-hosts",
+          "type": "bind"
+        },
+        {
+          "destination": "/dev/termination-log",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/containers/main/c53734b2",
+          "type": "bind"
+        },
+        {
+          "destination": "/etc/hostname",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b/hostname",
+          "type": "bind"
+        },
+        {
+          "destination": "/etc/resolv.conf",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b/resolv.conf",
+          "type": "bind"
+        },
+        {
+          "destination": "/dev/shm",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/run/containerd/io.containerd.grpc.v1.cri/sandboxes/c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b/shm",
+          "type": "bind"
+        },
+        {
+          "destination": "/var/run/argo",
+          "options": [
+            "rbind",
+            "rprivate",
+            "rw"
+          ],
+          "source": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo",
+          "type": "bind"
+        },
+        {
+          "destination": "/var/run/secrets/kubernetes.io/serviceaccount",
+          "options": [
+            "rbind",
+            "rprivate",
+            "ro"
+          ],
+          "source": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~projected/kube-api-access-gtlnp",
+          "type": "bind"
+        }
+      ],
+      "ociVersion": "1.3.0",
+      "process": {
+        "apparmorProfile": "cri-containerd.apparmor.d",
+        "args": [
+          "/var/run/argo/argoexec",
+          "emissary",
+          "--loglevel",
+          "info",
+          "--log-format",
+          "text",
+          "--gloglevel",
+          "0",
+          "--",
+          "python",
+          "/argo/staging/script"
+        ],
+        "capabilities": {
+          "bounding": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_MKNOD",
+            "CAP_NET_RAW",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETFCAP",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_SYS_CHROOT",
+            "CAP_KILL",
+            "CAP_AUDIT_WRITE"
+          ],
+          "effective": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_MKNOD",
+            "CAP_NET_RAW",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETFCAP",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_SYS_CHROOT",
+            "CAP_KILL",
+            "CAP_AUDIT_WRITE"
+          ],
+          "permitted": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_MKNOD",
+            "CAP_NET_RAW",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETFCAP",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_SYS_CHROOT",
+            "CAP_KILL",
+            "CAP_AUDIT_WRITE"
+          ]
+        },
+        "cwd": "/",
+        "env": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "HOSTNAME=experiment-k42z6",
+          "PYTHON_VERSION=3.14.7",
+          "PYTHON_SHA256=3b48dac8fb59f62eaa67ac83c1eb12bda1b7a08406dd286e252c11a66be27f81",
+          "TRACEPARENT=00-d6415fcf67ccce1f4e23a3983d12309e-7fc2acca37e49c1f-01",
+          "ARGO_PROGRESS_FILE=/var/run/argo/progress",
+          "ARGO_CONTAINER_NAME=main",
+          "ARGO_NODE_ID=experiment-k42z6",
+          "ARGO_INCLUDE_SCRIPT_OUTPUT=false",
+          "ARGO_DEADLINE=0001-01-01T00:00:00Z",
+          "ARGO_PROGRESS_PATCH_TICK_DURATION=1m0s",
+          "ARGO_PROGRESS_FILE_TICK_DURATION=3s",
+          "ARGO_WORKFLOW_NAME=experiment-k42z6",
+          "TRACESTATE=workflow=argo/experiment-k42z6",
+          "ARGO_SERVER_PORT_2746_TCP_PORT=2746",
+          "ARGO_SERVER_PORT_2746_TCP_ADDR=10.104.34.120",
+          "KUBERNETES_PORT=tcp://10.96.0.1:443",
+          "KUBERNETES_SERVICE_HOST=10.96.0.1",
+          "KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1",
+          "KUBERNETES_PORT_443_TCP_PROTO=tcp",
+          "ARGO_SERVER_SERVICE_HOST=10.104.34.120",
+          "ARGO_SERVER_SERVICE_PORT=2746",
+          "ARGO_SERVER_SERVICE_PORT_WEB=2746",
+          "ARGO_SERVER_PORT_2746_TCP=tcp://10.104.34.120:2746",
+          "KUBERNETES_SERVICE_PORT=443",
+          "KUBERNETES_SERVICE_PORT_HTTPS=443",
+          "KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443",
+          "KUBERNETES_PORT_443_TCP_PORT=443",
+          "ARGO_SERVER_PORT=tcp://10.104.34.120:2746",
+          "ARGO_SERVER_PORT_2746_TCP_PROTO=tcp"
+        ],
+        "oomScoreAdj": 1000,
+        "user": {
+          "additionalGids": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            10,
+            11,
+            20,
+            26,
+            27
+          ],
+          "gid": 0,
+          "uid": 0
+        }
+      },
+      "root": {
+        "path": "rootfs"
+      }
+    },
+    "runtimeType": "io.containerd.runc.v2",
+    "sandboxID": "c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b",
+    "snapshotKey": "2c202c882609cf63fe29ca9171b0fd7fb147e88780357c11893257380f1d114c",
+    "snapshotter": "overlayfs"
+  },
+  "status": {
+    "annotations": {
+      "io.kubernetes.container.hash": "73f80b47",
+      "io.kubernetes.container.restartCount": "0",
+      "io.kubernetes.container.terminationMessagePath": "/dev/termination-log",
+      "io.kubernetes.container.terminationMessagePolicy": "File",
+      "io.kubernetes.pod.terminationGracePeriod": "30"
+    },
+    "createdAt": "2026-09-19T11:28:47.700718179Z",
+    "exitCode": 0,
+    "finishedAt": "2026-09-19T11:33:47.889185427Z",
+    "id": "2c202c882609cf63fe29ca9171b0fd7fb147e88780357c11893257380f1d114c",
+    "image": {
+      "annotations": {},
+      "image": "docker.io/library/python:alpine3.23",
+      "imageRef": "",
+      "runtimeHandler": "",
+      "userSpecifiedImage": ""
+    },
+    "imageId": "sha256:80cc52c6f1cf4d2b8711e273a814d5e5a2b59ccf909936fe09e5f6603a409170",
+    "imageRef": "docker.io/library/python@sha256:200baf0bf6b7904cf643358326e580ca0b8afec82416fd6d233746ceb215283c",
+    "labels": {
+      "io.kubernetes.container.name": "main",
+      "io.kubernetes.pod.name": "experiment-k42z6",
+      "io.kubernetes.pod.namespace": "argo",
+      "io.kubernetes.pod.uid": "c6903810-78f0-485c-8bf7-f39d6b3e552c"
+    },
+    "logPath": "/var/log/pods/argo_experiment-k42z6_c6903810-78f0-485c-8bf7-f39d6b3e552c/main/0.log",
+    "message": "",
+    "metadata": {
+      "attempt": 0,
+      "name": "main"
+    },
+    "mounts": [
+      {
+        "containerPath": "/argo/staging",
+        "gidMappings": [],
+        "hostPath": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/argo-staging",
+        "imageSubPath": "",
+        "mountOptions": [],
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "recursiveReadOnly": false,
+        "selinuxRelabel": false,
+        "uidMappings": []
+      },
+      {
+        "containerPath": "/var/run/argo",
+        "gidMappings": [],
+        "hostPath": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~empty-dir/var-run-argo",
+        "imageSubPath": "",
+        "mountOptions": [],
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "recursiveReadOnly": false,
+        "selinuxRelabel": false,
+        "uidMappings": []
+      },
+      {
+        "containerPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+        "gidMappings": [],
+        "hostPath": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/volumes/kubernetes.io~projected/kube-api-access-gtlnp",
+        "imageSubPath": "",
+        "mountOptions": [],
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": true,
+        "recursiveReadOnly": false,
+        "selinuxRelabel": false,
+        "uidMappings": []
+      },
+      {
+        "containerPath": "/etc/hosts",
+        "gidMappings": [],
+        "hostPath": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/etc-hosts",
+        "imageSubPath": "",
+        "mountOptions": [],
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "recursiveReadOnly": false,
+        "selinuxRelabel": false,
+        "uidMappings": []
+      },
+      {
+        "containerPath": "/dev/termination-log",
+        "gidMappings": [],
+        "hostPath": "/var/lib/kubelet/pods/c6903810-78f0-485c-8bf7-f39d6b3e552c/containers/main/c53734b2",
+        "imageSubPath": "",
+        "mountOptions": [],
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "recursiveReadOnly": false,
+        "selinuxRelabel": false,
+        "uidMappings": []
+      }
+    ],
+    "reason": "Completed",
+    "resources": {
+      "linux": {
+        "cpuPeriod": "100000",
+        "cpuQuota": "0",
+        "cpuShares": "2",
+        "cpusetCpus": "",
+        "cpusetMems": "",
+        "hugepageLimits": [],
+        "memoryLimitInBytes": "0",
+        "memorySwapLimitInBytes": "0",
+        "oomScoreAdj": "1000",
+        "unified": {
+          "memory.low": "0",
+          "memory.min": "0",
+          "memory.oom.group": "1",
+          "memory.swap.max": "0"
+        }
+      }
+    },
+    "startedAt": "2026-09-19T11:28:47.768474642Z",
+    "state": "CONTAINER_EXITED",
+    "stopSignal": "SIGNAL_SIGTERM",
+    "user": {
+      "linux": {
+        "gid": "0",
+        "supplementalGroups": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "10",
+          "11",
+          "20",
+          "26",
+          "27"
+        ],
+        "uid": "0"
+      }
+    }
+  }
+}

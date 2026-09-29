@@ -1,0 +1,1 @@
+{"name":"demo","inputs":{},"outputs":{},"metadata":{},"script":{"name":"","image":"python:alpine3.23","command":["python"],"resources":{},"source":"import sys, time\nprint(\"EXPERIMENT-BEGIN\", file=sys.stderr, flush=True)\ntime.sleep(300)\nprint(\"42\")\n"}}

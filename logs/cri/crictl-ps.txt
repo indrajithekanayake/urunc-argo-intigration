@@ -1,0 +1,4 @@
+CONTAINER           IMAGE               CREATED             STATE               NAME                      ATTEMPT             POD ID              POD                                        NAMESPACE
+2c202c882609c       80cc52c6f1cf4       2 minutes ago       Running             main                      0                   c19cef1b84821       experiment-k42z6                           argo
+77b2381175889       fdda743445e0c       2 minutes ago       Running             wait                      0                   c19cef1b84821       experiment-k42z6                           argo
+38b9b1ee2ff3a       fdda743445e0c       2 minutes ago       Exited              init                      0                   c19cef1b84821       experiment-k42z6                           argo

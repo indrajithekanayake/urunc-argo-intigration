@@ -1,0 +1,5 @@
+root       98666       1  0 11:28 ?        00:00:00 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id c19cef1b84821dfa3848e55f80a86a46672a128748ac970d162ba48bb5e5ee6b -address /run/containerd/containerd.sock
+65535      98690   98666  0 11:28 ?        00:00:00  \_ /pause
+root       98801   98666  0 11:28 ?        00:00:00  \_ argoexec wait --loglevel info --log-format text --gloglevel 0
+root       98836   98666  0 11:28 ?        00:00:00  \_ /var/run/argo/argoexec emissary --loglevel info --log-format text --gloglevel 0 -- python /argo/staging/script
+root       98858   98836  0 11:28 ?        00:00:00      \_ /usr/local/bin/python /argo/staging/script

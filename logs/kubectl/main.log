@@ -1,0 +1,5 @@
+time=2026-09-19T11:28:47.792Z level=INFO msg="waiting for signals" argo=true signalPath=/var/run/argo/ctr/main/signal
+EXPERIMENT-BEGIN
+42
+time=2026-09-19T11:33:47.886Z level=INFO msg="sub-process exited" argo=true error=<nil>
+time=2026-09-19T11:33:47.886Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true

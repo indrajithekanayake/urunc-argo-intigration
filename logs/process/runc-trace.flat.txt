@@ -1,0 +1,43 @@
+containerd PID 96334   spawn-shim 98658   long-lived shim 98666   39 processes in this pod's subtree
+
+TIME          PID    PPID  STEP                             CONTAINER
+--------------------------------------------------------------------------------------------
+11:28:42    98658   96334  shim SPAWN (transient)           sandbox
+11:28:42    98666   98658  shim SERVE (long-lived)          sandbox
+11:28:42    98677   98666  runc create                      sandbox
+11:28:42    98686   98677  runc STAGE-2 (namespaces/cgroups)
+11:28:42    98696   98666  runc start                       sandbox
+11:28:42    98690   98666  ENTRYPOINT (pid 1 in ctr)        /pause
+11:28:43    98703   98666  runc create                      init
+11:28:43    98713   98703  runc STAGE-2 (namespaces/cgroups)
+11:28:43    98723   98666  runc start                       init
+11:28:43    98717   98666  ENTRYPOINT (pid 1 in ctr)        /usr/bin/argoexec init --loglevel info --log
+11:28:43    98737   98666  runc kill --all                  init
+11:28:43    98743   98666  runc delete                      init
+11:28:46    98753   96334  shim REAP (transient)            init
+11:28:46    98761   98753  runc delete --force              init
+11:28:47    98789   98666  runc create                      wait
+11:28:47    98798   98789  runc STAGE-2 (namespaces/cgroups)
+11:28:47    98808   98666  runc start                       wait
+11:28:47    98801   98666  ENTRYPOINT (pid 1 in ctr)        /usr/bin/argoexec wait --loglevel info --log
+11:28:47    98822   98666  runc create                      main
+11:28:47    98831   98822  runc STAGE-2 (namespaces/cgroups)
+11:28:47    98842   98666  runc start                       main
+11:28:47    98836   98666  ENTRYPOINT (pid 1 in ctr)        /var/run/argo/argoexec emissary --loglevel i
+11:28:47    98858   98836  child inside container           /usr/local/bin/python /argo/staging/script
+11:29:18    99323   98666  runc exec                        main
+11:29:18    99332   99323  runc STAGE-2 (namespaces/cgroups)
+11:29:18    99335   98666  INJECTED by runc exec            /bin/ps -o pid,ppid,args
+11:33:47   106595   98666  runc kill --all                  main
+11:33:47   106601   98666  runc delete                      main
+11:33:47   106608   96334  shim REAP (transient)            main
+11:33:47   106616  106608  runc delete --force              main
+11:33:48   106621   98666  runc kill --all                  wait
+11:33:48   106627   98666  runc delete                      wait
+11:33:49   106645   96334  shim REAP (transient)            wait
+11:33:49   106653  106645  runc delete --force              wait
+11:33:50   106659   98666  runc kill                        sandbox
+11:33:50   106666   98666  runc kill --all                  sandbox
+11:33:50   106672   98666  runc delete                      sandbox
+11:33:50   106678   96334  shim REAP (transient)            sandbox
+11:33:50   106686  106678  runc delete --force              sandbox

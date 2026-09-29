@@ -1,0 +1,4 @@
+import sys, time
+print("EXPERIMENT-BEGIN", file=sys.stderr, flush=True)
+time.sleep(300)
+print("42")

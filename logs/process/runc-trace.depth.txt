@@ -1,0 +1,44 @@
+DEPTH VIEW  (indent = ancestry; same column = same parent)
+
+TIME      TREE (indent by depth)                                   PID  CONTAINER
+----------------------------------------------------------------------------------------
+          containerd                                             96334
+11:28:42     └─ shim SPAWN                                       98658  sandbox
+11:28:42        └─ shim SERVE                                    98666  sandbox
+11:28:42           └─ runc create                                98677  sandbox
+11:28:42              └─ stage-2 (runc re-exec)                  98686  
+11:28:42           └─ runc start                                 98696  sandbox
+11:28:42           └─ pause                                      98690  sandbox
+11:28:43           └─ runc create                                98703  init
+11:28:43              └─ stage-2 (runc re-exec)                  98713  
+11:28:43           └─ runc start                                 98723  init
+11:28:43           └─ argoexec init                              98717  init
+11:28:43           └─ runc kill --all                            98737  init
+11:28:43           └─ runc delete                                98743  init
+11:28:46     └─ shim REAP                                        98753  init
+11:28:46        └─ runc delete --force                           98761  init
+11:28:47           └─ runc create                                98789  wait
+11:28:47              └─ stage-2 (runc re-exec)                  98798  
+11:28:47           └─ runc start                                 98808  wait
+11:28:47           └─ argoexec wait                              98801  wait
+11:28:47           └─ runc create                                98822  main
+11:28:47              └─ stage-2 (runc re-exec)                  98831  
+11:28:47           └─ runc start                                 98842  main
+11:28:47           └─ argoexec emissary                          98836  main
+11:28:47              └─ python /argo/staging/script             98858  main
+11:29:18           └─ runc exec                                  99323  main  [OBSERVER]
+11:29:18              └─ stage-2 (runc re-exec)                  99332    [OBSERVER]
+11:29:18           └─ ps -o pid,ppid,args                        99335  main  [OBSERVER]
+11:33:47           └─ runc kill --all                           106595  main
+11:33:47           └─ runc delete                               106601  main
+11:33:47     └─ shim REAP                                       106608  main
+11:33:47        └─ runc delete --force                          106616  main
+11:33:48           └─ runc kill --all                           106621  wait
+11:33:48           └─ runc delete                               106627  wait
+11:33:49     └─ shim REAP                                       106645  wait
+11:33:49        └─ runc delete --force                          106653  wait
+11:33:50           └─ runc kill                                 106659  sandbox
+11:33:50           └─ runc kill --all                           106666  sandbox
+11:33:50           └─ runc delete                               106672  sandbox
+11:33:50     └─ shim REAP                                       106678  sandbox
+11:33:50        └─ runc delete --force                          106686  sandbox

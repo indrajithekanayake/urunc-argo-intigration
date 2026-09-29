@@ -1,0 +1,73 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  annotations:
+    workflows.argoproj.io/pod-name-format: v2
+    workflows.argoproj.io/trace-id: d6415fcf67ccce1f4e23a3983d12309e
+  creationTimestamp: "2026-09-19T11:28:38Z"
+  generateName: experiment-
+  generation: 4
+  labels:
+    workflows.argoproj.io/completed: "true"
+    workflows.argoproj.io/creator: kubernetes-admin
+    workflows.argoproj.io/phase: Succeeded
+  name: experiment-k42z6
+  namespace: argo
+  resourceVersion: "1266"
+  uid: 13789594-5c80-4678-9117-91b93fef0e75
+spec:
+  arguments: {}
+  entrypoint: demo
+  templates:
+  - inputs: {}
+    metadata: {}
+    name: demo
+    outputs: {}
+    script:
+      command:
+      - python
+      image: python:alpine3.23
+      name: ""
+      resources: {}
+      source: |
+        import sys, time
+        print("EXPERIMENT-BEGIN", file=sys.stderr, flush=True)
+        time.sleep(300)
+        print("42")
+status:
+  artifactGCStatus:
+    notSpecified: true
+  artifactRepositoryRef:
+    artifactRepository: {}
+    default: true
+  conditions:
+  - status: "False"
+    type: PodRunning
+  - status: "True"
+    type: Completed
+  finishedAt: "2026-09-19T11:33:57Z"
+  nodes:
+    experiment-k42z6:
+      displayName: experiment-k42z6
+      finishedAt: "2026-09-19T11:33:48Z"
+      hostNodeName: systems-research
+      id: experiment-k42z6
+      name: experiment-k42z6
+      outputs:
+        exitCode: "0"
+      phase: Succeeded
+      progress: 1/1
+      resourcesDuration:
+        cpu: 60
+        memory: 601
+      startedAt: "2026-09-19T11:28:38Z"
+      taskResultSynced: true
+      templateName: demo
+      templateScope: local/experiment-k42z6
+      type: Pod
+  phase: Succeeded
+  progress: 1/1
+  resourcesDuration:
+    cpu: 60
+    memory: 601
+  startedAt: "2026-09-19T11:28:38Z"

@@ -1,0 +1,26 @@
+# THE experiment - the only workflow this cluster will ever run.
+# One pod, so every log line in this lab has exactly one possible source.
+#
+# Chosen as a `script` template because it exercises the most machinery
+# in a single pod:
+#   - init  stages the Python source onto a volume
+#   - main  runs argoexec emissary wrapping the interpreter
+#   - wait  captures stdout into outputs.result
+# The marker goes to stderr and the result to stdout, so the CRI stream
+# split is visible in the raw logs.
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: experiment-
+spec:
+  entrypoint: demo
+  templates:
+    - name: demo
+      script:
+        image: python:alpine3.23
+        command: [python]
+        source: |
+          import sys, time
+          print("EXPERIMENT-BEGIN", file=sys.stderr, flush=True)
+          time.sleep(300)
+          print("42")

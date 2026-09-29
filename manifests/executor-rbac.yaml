@@ -1,0 +1,28 @@
+# The Argo executor (the `wait` container) reports each node's result back to the
+# API server as a WorkflowTaskResult. install.yaml does NOT grant the workflow's
+# ServiceAccount that permission, so without this every workflow fails with
+#   workflowtaskresults.argoproj.io is forbidden
+# Kept explicit here because it demonstrates the wait container's API-server role.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: executor
+  namespace: argo
+rules:
+  - apiGroups: ["argoproj.io"]
+    resources: ["workflowtaskresults"]
+    verbs: ["create", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: executor-default
+  namespace: argo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: executor
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: argo

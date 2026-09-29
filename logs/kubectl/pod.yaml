@@ -1,0 +1,391 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubectl.kubernetes.io/default-container: main
+    workflows.argoproj.io/node-id: experiment-k42z6
+    workflows.argoproj.io/node-name: experiment-k42z6
+    workflows.argoproj.io/span-id: 7fc2acca37e49c1f
+    workflows.argoproj.io/trace-id: d6415fcf67ccce1f4e23a3983d12309e
+  creationTimestamp: "2026-09-19T11:28:39Z"
+  generation: 1
+  labels:
+    workflows.argoproj.io/completed: "true"
+    workflows.argoproj.io/workflow: experiment-k42z6
+  name: experiment-k42z6
+  namespace: argo
+  ownerReferences:
+  - apiVersion: argoproj.io/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Workflow
+    name: experiment-k42z6
+    uid: 13789594-5c80-4678-9117-91b93fef0e75
+  resourceVersion: "649433"
+  uid: c6903810-78f0-485c-8bf7-f39d6b3e552c
+spec:
+  containers:
+  - command:
+    - argoexec
+    - wait
+    - --loglevel
+    - info
+    - --log-format
+    - text
+    - --gloglevel
+    - "0"
+    env:
+    - name: ARGO_POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: ARGO_POD_UID
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.uid
+    - name: ARGO_WORKFLOW_NAME
+      value: experiment-k42z6
+    - name: ARGO_WORKFLOW_UID
+      value: 13789594-5c80-4678-9117-91b93fef0e75
+    - name: ARGO_ARTIFACT_PLUGIN_NAMES
+    - name: ARGO_CONTAINER_NAME
+      value: wait
+    - name: ARGO_NODE_ID
+      value: experiment-k42z6
+    - name: ARGO_INCLUDE_SCRIPT_OUTPUT
+      value: "false"
+    - name: ARGO_DEADLINE
+      value: "0001-01-01T00:00:00Z"
+    - name: ARGO_WORKFLOW_NAME
+      value: experiment-k42z6
+    - name: TRACESTATE
+      value: workflow=argo/experiment-k42z6
+    - name: TRACEPARENT
+      value: 00-d6415fcf67ccce1f4e23a3983d12309e-7fc2acca37e49c1f-01
+    - name: ARGO_PROGRESS_FILE
+      value: /var/run/argo/progress
+    - name: ARGO_PROGRESS_PATCH_TICK_DURATION
+      value: 1m0s
+    - name: ARGO_PROGRESS_FILE_TICK_DURATION
+      value: 3s
+    image: quay.io/argoproj/argoexec:v4.1.4
+    imagePullPolicy: IfNotPresent
+    name: wait
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /mainctrfs/argo/staging
+      name: argo-staging
+    - mountPath: /tmp
+      name: tmp-dir-argo
+      subPath: "0"
+    - mountPath: /var/run/argo
+      name: var-run-argo
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-gtlnp
+      readOnly: true
+  - args:
+    - /argo/staging/script
+    command:
+    - /var/run/argo/argoexec
+    - emissary
+    - --loglevel
+    - info
+    - --log-format
+    - text
+    - --gloglevel
+    - "0"
+    - --
+    - python
+    env:
+    - name: ARGO_CONTAINER_NAME
+      value: main
+    - name: ARGO_NODE_ID
+      value: experiment-k42z6
+    - name: ARGO_INCLUDE_SCRIPT_OUTPUT
+      value: "false"
+    - name: ARGO_DEADLINE
+      value: "0001-01-01T00:00:00Z"
+    - name: ARGO_WORKFLOW_NAME
+      value: experiment-k42z6
+    - name: TRACESTATE
+      value: workflow=argo/experiment-k42z6
+    - name: TRACEPARENT
+      value: 00-d6415fcf67ccce1f4e23a3983d12309e-7fc2acca37e49c1f-01
+    - name: ARGO_PROGRESS_FILE
+      value: /var/run/argo/progress
+    - name: ARGO_PROGRESS_PATCH_TICK_DURATION
+      value: 1m0s
+    - name: ARGO_PROGRESS_FILE_TICK_DURATION
+      value: 3s
+    image: python:alpine3.23
+    imagePullPolicy: IfNotPresent
+    name: main
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /argo/staging
+      name: argo-staging
+    - mountPath: /var/run/argo
+      name: var-run-argo
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-gtlnp
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  initContainers:
+  - command:
+    - argoexec
+    - init
+    - --loglevel
+    - info
+    - --log-format
+    - text
+    - --gloglevel
+    - "0"
+    env:
+    - name: ARGO_POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: ARGO_POD_UID
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.uid
+    - name: ARGO_WORKFLOW_NAME
+      value: experiment-k42z6
+    - name: ARGO_WORKFLOW_UID
+      value: 13789594-5c80-4678-9117-91b93fef0e75
+    - name: ARGO_CONTAINER_NAME
+      value: init
+    - name: ARGO_TEMPLATE
+      value: '{"name":"demo","inputs":{},"outputs":{},"metadata":{},"script":{"name":"","image":"python:alpine3.23","command":["python"],"resources":{},"source":"import
+        sys, time\nprint(\"EXPERIMENT-BEGIN\", file=sys.stderr, flush=True)\ntime.sleep(300)\nprint(\"42\")\n"}}'
+    - name: ARGO_NODE_ID
+      value: experiment-k42z6
+    - name: ARGO_INCLUDE_SCRIPT_OUTPUT
+      value: "false"
+    - name: ARGO_DEADLINE
+      value: "0001-01-01T00:00:00Z"
+    - name: ARGO_WORKFLOW_NAME
+      value: experiment-k42z6
+    - name: TRACESTATE
+      value: workflow=argo/experiment-k42z6
+    - name: TRACEPARENT
+      value: 00-d6415fcf67ccce1f4e23a3983d12309e-7fc2acca37e49c1f-01
+    - name: ARGO_PROGRESS_FILE
+      value: /var/run/argo/progress
+    - name: ARGO_PROGRESS_PATCH_TICK_DURATION
+      value: 1m0s
+    - name: ARGO_PROGRESS_FILE_TICK_DURATION
+      value: 3s
+    image: quay.io/argoproj/argoexec:v4.1.4
+    imagePullPolicy: IfNotPresent
+    name: init
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /argo/staging
+      name: argo-staging
+    - mountPath: /var/run/argo
+      name: var-run-argo
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-gtlnp
+      readOnly: true
+  nodeName: systems-research
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - emptyDir: {}
+    name: var-run-argo
+  - emptyDir: {}
+    name: tmp-dir-argo
+  - emptyDir: {}
+    name: argo-staging
+  - name: kube-api-access-gtlnp
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2026-09-19T11:33:50Z"
+    message: pod sandbox is not ready
+    observedGeneration: 1
+    reason: PodSandboxNotReady
+    status: "False"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2026-09-19T11:28:46Z"
+    observedGeneration: 1
+    reason: PodCompleted
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2026-09-19T11:33:48Z"
+    observedGeneration: 1
+    reason: PodCompleted
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2026-09-19T11:33:48Z"
+    observedGeneration: 1
+    reason: PodCompleted
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2026-09-19T11:28:41Z"
+    observedGeneration: 1
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://2c202c882609cf63fe29ca9171b0fd7fb147e88780357c11893257380f1d114c
+    image: docker.io/library/python:alpine3.23
+    imageID: docker.io/library/python@sha256:200baf0bf6b7904cf643358326e580ca0b8afec82416fd6d233746ceb215283c
+    lastState: {}
+    name: main
+    ready: false
+    resources: {}
+    restartCount: 0
+    started: false
+    state:
+      terminated:
+        containerID: containerd://2c202c882609cf63fe29ca9171b0fd7fb147e88780357c11893257380f1d114c
+        exitCode: 0
+        finishedAt: "2026-09-19T11:33:47Z"
+        reason: Completed
+        startedAt: "2026-09-19T11:28:47Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 10
+        - 11
+        - 20
+        - 26
+        - 27
+        uid: 0
+    volumeMounts:
+    - mountPath: /argo/staging
+      name: argo-staging
+    - mountPath: /var/run/argo
+      name: var-run-argo
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-gtlnp
+      readOnly: true
+      recursiveReadOnly: Disabled
+  - containerID: containerd://77b238117588962d7d1636b914844f20da2d2085823702d853c1d762e482d610
+    image: quay.io/argoproj/argoexec:v4.1.4
+    imageID: quay.io/argoproj/argoexec@sha256:ec2a867c2db200d33acda0e9141898070266c1f678bb995bd08cea68ace89c40
+    lastState: {}
+    name: wait
+    ready: false
+    resources: {}
+    restartCount: 0
+    started: false
+    state:
+      terminated:
+        containerID: containerd://77b238117588962d7d1636b914844f20da2d2085823702d853c1d762e482d610
+        exitCode: 0
+        finishedAt: "2026-09-19T11:33:48Z"
+        reason: Completed
+        startedAt: "2026-09-19T11:28:47Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        uid: 0
+    volumeMounts:
+    - mountPath: /mainctrfs/argo/staging
+      name: argo-staging
+    - mountPath: /tmp
+      name: tmp-dir-argo
+    - mountPath: /var/run/argo
+      name: var-run-argo
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-gtlnp
+      readOnly: true
+      recursiveReadOnly: Disabled
+  hostIP: 192.168.122.11
+  hostIPs:
+  - ip: 192.168.122.11
+  initContainerStatuses:
+  - containerID: containerd://38b9b1ee2ff3ab3a9e746f0aa7c76f86c9b733f475fa6b076efaffcf1a1f9bdf
+    image: quay.io/argoproj/argoexec:v4.1.4
+    imageID: quay.io/argoproj/argoexec@sha256:ec2a867c2db200d33acda0e9141898070266c1f678bb995bd08cea68ace89c40
+    lastState: {}
+    name: init
+    ready: true
+    resources: {}
+    restartCount: 0
+    started: false
+    state:
+      terminated:
+        containerID: containerd://38b9b1ee2ff3ab3a9e746f0aa7c76f86c9b733f475fa6b076efaffcf1a1f9bdf
+        exitCode: 0
+        finishedAt: "2026-09-19T11:28:43Z"
+        reason: Completed
+        startedAt: "2026-09-19T11:28:43Z"
+    user:
+      linux:
+        gid: 0
+        supplementalGroups:
+        - 0
+        uid: 0
+    volumeMounts:
+    - mountPath: /argo/staging
+      name: argo-staging
+    - mountPath: /var/run/argo
+      name: var-run-argo
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-gtlnp
+      readOnly: true
+      recursiveReadOnly: Disabled
+  observedGeneration: 1
+  phase: Succeeded
+  qosClass: BestEffort
+  resources: {}
+  startTime: "2026-09-19T11:28:42Z"

@@ -1,0 +1,58 @@
+time=2026-09-19T11:28:38.870Z level=INFO msg="Processing workflow" component=workflow_worker workflow=experiment-k42z6 namespace=argo phase="" resourceVersion=751
+time=2026-09-19T11:28:38.870Z level=INFO msg="trace parent" startMethod=StartWaitClientRateLimiter actualParent=reconcileWorkflow component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:38.872Z level=INFO msg="resolved artifact repository" workflow=experiment-k42z6 namespace=argo artifactRepositoryRef=default-artifact-repository component=workflow_worker
+time=2026-09-19T11:28:38.872Z level=INFO msg="Task-result reconciliation" namespace=argo numObjs=0 component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:28:38.872Z level=INFO msg="updated phase" component=workflow_worker workflow=experiment-k42z6 namespace=argo fromPhase="" toPhase=Running
+time=2026-09-19T11:28:38.872Z level=INFO msg="Node was nil, will be initialized as type Skipped" component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:38.872Z level=INFO msg="was unable to obtain node, letting display name to be nodeName" boundaryID="" namespace=argo component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:28:38.872Z level=INFO msg="node initialized" component=workflow_worker workflow=experiment-k42z6 namespace=argo node=experiment-k42z6 phase=Pending message=""
+time=2026-09-19T11:28:38.872Z level=WARN msg="couldn't get boundaryTemplate" nodeName=experiment-k42z6 namespace=argo component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:28:38.872Z level=INFO msg=getExecutorLogOpts workflow=experiment-k42z6 namespace=argo loglevel=info component=workflow_worker nodeName=experiment-k42z6 nodeID=experiment-k42z6
+time=2026-09-19T11:28:38.872Z level=INFO msg=getExecutorLogOpts nodeID=experiment-k42z6 workflow=experiment-k42z6 loglevel=info namespace=argo component=workflow_worker nodeName=experiment-k42z6
+time=2026-09-19T11:28:38.873Z level=INFO msg=getExecutorLogOpts namespace=argo component=workflow_worker nodeName=experiment-k42z6 loglevel=info nodeID=experiment-k42z6 workflow=experiment-k42z6
+time=2026-09-19T11:28:38.873Z level=INFO msg="Event occurred" fieldPath="" kind=Workflow component=workflow_worker apiVersion=argoproj.io/v1alpha1 type=Normal reason=WorkflowRunning message="Workflow Running" object.name=experiment-k42z6 object.namespace=argo
+time=2026-09-19T11:28:38.873Z level=INFO msg="trace parent" namespace=argo nodeID=experiment-k42z6 nodeName=experiment-k42z6 podName=experiment-k42z6 component=workflow_worker workflow=experiment-k42z6 startMethod=StartWaitClientRateLimiter actualParent=createWorkflowPod
+time=2026-09-19T11:28:41.840Z level=INFO msg="Created pod" podName=experiment-k42z6 component=workflow_worker workflow=experiment-k42z6 namespace=argo nodeID=experiment-k42z6 nodeName=experiment-k42z6
+time=2026-09-19T11:28:41.840Z level=INFO msg="TaskSet Reconciliation" component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:41.840Z level=INFO msg=reconcileAgentPod component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:41.840Z level=INFO msg="add pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:28:41.840Z level=INFO msg="Workflow to be dehydrated" workflow=experiment-k42z6 namespace=argo "Workflow Size"=781 component=workflow_worker
+time=2026-09-19T11:28:41.840Z level=INFO msg="trace parent" startMethod=StartWaitClientRateLimiter actualParent=persistUpdates component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:42.160Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:28:42.163Z level=INFO msg="Workflow update successful" workflow=experiment-k42z6 namespace=argo resourceVersion=758 phase=Running component=workflow_worker
+time=2026-09-19T11:28:42.297Z level=INFO msg="update pod event" pod=experiment-k42z6 component=pod_controller
+time=2026-09-19T11:28:42.988Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:28:46.097Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:28:46.935Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:28:47.873Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:28:51.841Z level=INFO msg="Processing workflow" namespace=argo phase=Running resourceVersion=758 component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:28:51.841Z level=INFO msg="Task-result reconciliation" namespace=argo component=workflow_worker workflow=experiment-k42z6 numObjs=1
+time=2026-09-19T11:28:51.841Z level=INFO msg="TaskSet Reconciliation" component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:51.841Z level=INFO msg=reconcileAgentPod namespace=argo component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:28:51.841Z level=INFO msg="Workflow to be dehydrated" workflow=experiment-k42z6 "Workflow Size"=819 namespace=argo component=workflow_worker
+time=2026-09-19T11:28:51.841Z level=INFO msg="trace parent" component=workflow_worker workflow=experiment-k42z6 namespace=argo startMethod=StartWaitClientRateLimiter actualParent=persistUpdates
+time=2026-09-19T11:28:52.673Z level=INFO msg="Workflow update successful" component=workflow_worker resourceVersion=789 phase=Running workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:28:52.673Z level=INFO msg="Event occurred" kind=Workflow apiVersion=argoproj.io/v1alpha1 type=Normal reason=WorkflowNodeRunning message="Running node experiment-k42z6" component=workflow_worker object.name=experiment-k42z6 object.namespace=argo fieldPath=""
+time=2026-09-19T11:29:03.095Z level=INFO msg="Processing workflow" component=workflow_worker workflow=experiment-k42z6 namespace=argo phase=Running resourceVersion=789
+time=2026-09-19T11:29:03.095Z level=INFO msg="Task-result reconciliation" numObjs=1 component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:29:03.095Z level=INFO msg="TaskSet Reconciliation" namespace=argo component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:29:03.095Z level=INFO msg=reconcileAgentPod workflow=experiment-k42z6 namespace=argo component=workflow_worker
+time=2026-09-19T11:33:49.634Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:33:49.698Z level=INFO msg="update pod event" pod=experiment-k42z6 component=pod_controller
+time=2026-09-19T11:33:50.817Z level=INFO msg="update pod event" component=pod_controller pod=experiment-k42z6
+time=2026-09-19T11:33:57.902Z level=INFO msg="Processing workflow" component=workflow_worker workflow=experiment-k42z6 namespace=argo phase=Running resourceVersion=789
+time=2026-09-19T11:33:57.902Z level=INFO msg="Task-result reconciliation" namespace=argo component=workflow_worker workflow=experiment-k42z6 numObjs=1
+time=2026-09-19T11:33:57.902Z level=INFO msg="TaskSet Reconciliation" component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:33:57.902Z level=INFO msg=reconcileAgentPod namespace=argo component=workflow_worker workflow=experiment-k42z6
+time=2026-09-19T11:33:57.902Z level=INFO msg="updated phase" fromPhase=Running toPhase=Succeeded component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:33:57.902Z level=INFO msg="Marking workflow completed" component=workflow_worker workflow=experiment-k42z6 namespace=argo
+time=2026-09-19T11:33:57.902Z level=INFO msg="Workflow to be dehydrated" workflow=experiment-k42z6 namespace=argo "Workflow Size"=913 component=workflow_worker
+time=2026-09-19T11:33:57.902Z level=INFO msg="trace parent" component=workflow_worker workflow=experiment-k42z6 namespace=argo startMethod=StartWaitClientRateLimiter actualParent=persistUpdates
+time=2026-09-19T11:33:57.902Z level=INFO msg="Event occurred" fieldPath="" kind=Workflow apiVersion=argoproj.io/v1alpha1 component=workflow_worker type=Normal reason=WorkflowSucceeded message="Workflow completed" object.name=experiment-k42z6 object.namespace=argo
+time=2026-09-19T11:33:58.903Z level=INFO msg="Workflow update successful" component=workflow_worker workflow=experiment-k42z6 namespace=argo resourceVersion=1266 phase=Succeeded
+time=2026-09-19T11:33:58.903Z level=INFO msg="trace parent" namespace=argo component=workflow_worker workflow=experiment-k42z6 startMethod=StartWaitClientRateLimiter actualParent=persistUpdates
+time=2026-09-19T11:33:58.903Z level=INFO msg="Event occurred" message="Succeeded node experiment-k42z6" component=workflow_worker object.name=experiment-k42z6 object.namespace=argo fieldPath="" kind=Workflow apiVersion=argoproj.io/v1alpha1 type=Normal reason=WorkflowNodeSucceeded
+time=2026-09-19T11:33:59.032Z level=INFO msg="queueing pod for cleanup" component=pod_controller namespace=argo podName=experiment-k42z6 action=labelPodCompleted
+time=2026-09-19T11:33:59.037Z level=INFO msg="cleaning up pod" component=pod_controller namespace=argo podName=experiment-k42z6 key=argo/experiment-k42z6/labelPodCompleted action=labelPodCompleted
+time=2026-09-19T11:33:59.037Z level=INFO msg="trace parent" namespace=argo podName=experiment-k42z6 key=argo/experiment-k42z6/labelPodCompleted action=labelPodCompleted startMethod=StartWaitClientRateLimiter actualParent=startupController component=pod_controller
+time=2026-09-19T11:33:59.072Z level=INFO msg="delete pod event" component=pod_controller pod=experiment-k42z6
